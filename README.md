@@ -19,7 +19,28 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod 'ACTextField'
 ```
-
+## Use
+To import library
+```swift
+import ACTextField
+````
+To give Data Set
+```swift
+yourACTextField..setAutoCompleteWith(DataSet: ["Apple","Mango","Orange"])
+````
+To set its delegate 
+```swift
+yourACTextField.ACDelegate = self
+````
+```swift
+func ACTextField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        return true
+    }
+````
+To set its suggestion TextColor ,  By default it is light gray
+```swift
+yourACTextField.suggestionTextColor = UIColor.yellow
+````
 ## Author
 
 varkrishna, krishan.varshney708@gmail.com
