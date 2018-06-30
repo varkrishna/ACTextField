@@ -10,11 +10,7 @@ import UIKit
 protocol ACTextFieldDelegate {
     func  ACTextField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
 }
-//extension ACTextFieldDelegate{
-//    func  ACTextField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool{
-//        return true
-//    }
-//}
+
 class ACTextField: UITextField,UITextFieldDelegate {
 
     var ACDelegate  : ACTextFieldDelegate?

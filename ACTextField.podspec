@@ -34,8 +34,10 @@ You can set 'suggestionTextColor' ,a property of ACTextField  ,using this proper
   s.author           = { 'varkrishna' => 'krishan.varshney708@gmail.com' }
   s.source           = { :git => 'https://github.com/varkrishna/ACTextField.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '10.0'
+    s.pod_target_xcconfig = { 'swift_version' => '4.0' }
 
+  s.ios.deployment_target = '10.0'
+    s.swift_version = '4.0'
   s.source_files = 'ACTextField/Classes/**/*'
   
   # s.resource_bundles = {

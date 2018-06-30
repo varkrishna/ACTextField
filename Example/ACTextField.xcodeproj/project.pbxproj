@@ -46,7 +46,6 @@
 		B0C8D550DC12E35FBA54F3EF /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		C2509112FDAF9754D03E848B /* Pods_ACTextField_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ACTextField_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE41045CF1DE9531363A6A34 /* Pods_ACTextField_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ACTextField_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F36A118B20E7EA6F0075A272 /* ACTextField.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ACTextField.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB4431C191ABC2C3E8F6D9C7 /* Pods-ACTextField_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ACTextField_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-ACTextField_Example/Pods-ACTextField_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,7 +92,6 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
-				F36A118B20E7EA6F0075A272 /* ACTextField.framework */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for ACTextField */,
 				607FACE81AFB9204008FA782 /* Tests */,
