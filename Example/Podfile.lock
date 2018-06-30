@@ -1,0 +1,16 @@
+PODS:
+  - ACTextField (0.1.0)
+
+DEPENDENCIES:
+  - ACTextField (from `../`)
+
+EXTERNAL SOURCES:
+  ACTextField:
+    :path: ../
+
+SPEC CHECKSUMS:
+  ACTextField: 4a4778ffdaf8c0d09c46594029c5cab98b726c3b
+
+PODFILE CHECKSUM: 9a4ebc8319066b7c73774183b94bc4c563bc764b
+
+COCOAPODS: 1.4.0

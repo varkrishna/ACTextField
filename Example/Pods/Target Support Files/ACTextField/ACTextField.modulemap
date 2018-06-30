@@ -1,0 +1,6 @@
+framework module ACTextField {
+  umbrella header "ACTextField-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'ACTextField_Example' do
+  pod 'ACTextField', :path => '../'
+
+  target 'ACTextField_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

@@ -1,0 +1,11 @@
+framework module ACTextField {
+  umbrella header "ACTextField-umbrella.h"
+
+  export *
+  module * { export * }
+}
+
+module ACTextField.Swift {
+    header "ACTextField-Swift.h"
+    requires objc
+}
