@@ -7,14 +7,14 @@
 //
 
 import UIKit
-protocol ACTextFieldDelegate {
+public protocol ACTextFieldDelegate {
     func  ACTextField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
 }
 
-class ACTextField: UITextField,UITextFieldDelegate {
+public class ACTextField: UITextField,UITextFieldDelegate {
 
-    var ACDelegate  : ACTextFieldDelegate?
-    var strictMode = false
+    public var ACDelegate  : ACTextFieldDelegate?
+    public var strictMode = false
     private var ACDelegateResult = true
     private var autoCompleteDataSet = [String]()
     private var autoCompleteCharacterCount = 0
@@ -25,7 +25,7 @@ class ACTextField: UITextField,UITextFieldDelegate {
             self.suggestionColor = self.suggestionTextColor
         }
     }
-    func setAutoCompleteWith(DataSet dataSet:[String]){
+    public func setAutoCompleteWith(DataSet dataSet:[String]){
         autoCompleteDataSet = dataSet
     }
     override init(frame: CGRect) {
@@ -40,7 +40,7 @@ class ACTextField: UITextField,UITextFieldDelegate {
     }
     
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool { //1
+    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool { //1
         if let del = ACDelegate?.ACTextField(self, shouldChangeCharactersIn: range, replacementString: string){
             ACDelegateResult = del
         }
