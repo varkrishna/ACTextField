@@ -12,7 +12,7 @@ public protocol ACTextFieldDelegate {
 }
 
 public class ACTextField: UITextField,UITextFieldDelegate {
-
+    
     public var ACDelegate  : ACTextFieldDelegate?
     public var strictMode = false
     private var ACDelegateResult = true
@@ -33,10 +33,10 @@ public class ACTextField: UITextField,UITextFieldDelegate {
         self.delegate = self
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         self.delegate = self
-
+        
     }
     
     
@@ -46,11 +46,11 @@ public class ACTextField: UITextField,UITextFieldDelegate {
         }
         var subString = (textField.text! as NSString).replacingCharacters(in: range, with: string) // 2
         subString = formatSubstring(subString: subString)
-
+        
         if subString.count == 0 { // 3 when a user clears the textField
             resetValues()
         } else {
-           searchAutocompleteEntriesWIthSubstring(substring: subString) //4
+            searchAutocompleteEntriesWIthSubstring(substring: subString) //4
         }
         
         return ACDelegateResult
@@ -77,18 +77,26 @@ public class ACTextField: UITextField,UITextFieldDelegate {
         let userQuery = substring
         let suggestions = getAutocompleteSuggestions(userText: substring) //1
         if suggestions.count > 0 {
-            timer = .scheduledTimer(withTimeInterval: 0.01, repeats: false, block: { (timer) in //2
-                let autocompleteResult = self.formatAutocompleteResult(substring: substring, possibleMatches: suggestions) // 3
-                self.putColourFormattedTextInTextField(autocompleteResult: autocompleteResult, userQuery : userQuery) //4
-                self.moveCaretToEndOfUserQueryPosition(userQuery: userQuery) //5
-            })
+            if #available(iOS 10.0, *) {
+                timer = .scheduledTimer(withTimeInterval: 0.01, repeats: false, block: { (timer) in //2
+                    let autocompleteResult = self.formatAutocompleteResult(substring: substring, possibleMatches: suggestions) // 3
+                    self.putColourFormattedTextInTextField(autocompleteResult: autocompleteResult, userQuery : userQuery) //4
+                    self.moveCaretToEndOfUserQueryPosition(userQuery: userQuery) //5
+                })
+            } else {
+                // Fallback on earlier versions
+            }
         } else {
-            timer = .scheduledTimer(withTimeInterval: 0.01, repeats: false, block: { (timer) in //7
-                if self.ACDelegateResult{
-                    self.text = substring
-                }
-                
-            })
+            if #available(iOS 10.0, *) {
+                timer = .scheduledTimer(withTimeInterval: 0.01, repeats: false, block: { (timer) in //7
+                    if self.ACDelegateResult{
+                        self.text = substring
+                    }
+                    
+                })
+            } else {
+                // Fallback on earlier versions
+            }
             autoCompleteCharacterCount = 0
         }
     }
@@ -128,5 +136,6 @@ public class ACTextField: UITextField,UITextFieldDelegate {
         autoCompleteCharacterCount = autoCompleteResult.count
         return autoCompleteResult
     }
-
+    
 }
+

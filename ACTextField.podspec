@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ACTextField'
-  s.version          = '1.0.0'
+  s.version          = '1.0.2'
   s.summary          = 'UITextField Subclass which have auto completed text feature'
 
 
