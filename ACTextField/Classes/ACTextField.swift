@@ -40,7 +40,7 @@ open class ACTextField: UITextField,UITextFieldDelegate {
     }
     
     
-    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool { //1
+    open func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool { //1
         if let del = ACDelegate?.ACTextField(self, shouldChangeCharactersIn: range, replacementString: string){
             ACDelegateResult = del
         }
