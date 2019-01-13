@@ -11,10 +11,10 @@ public protocol ACTextFieldDelegate {
     func  ACTextField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
 }
 
-public class ACTextField: UITextField,UITextFieldDelegate {
+open class ACTextField: UITextField,UITextFieldDelegate {
     
-    public var ACDelegate  : ACTextFieldDelegate?
-    public var strictMode = false
+    open var ACDelegate  : ACTextFieldDelegate?
+    open var strictMode = false
     private var ACDelegateResult = true
     private var autoCompleteDataSet = [String]()
     private var autoCompleteCharacterCount = 0
