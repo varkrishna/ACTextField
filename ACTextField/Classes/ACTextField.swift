@@ -11,10 +11,10 @@ public protocol ACTextFieldDelegate {
     func  ACTextField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
 }
 
-public class ACTextField: UITextField,UITextFieldDelegate {
+open class ACTextField: UITextField,UITextFieldDelegate {
     
-    public var ACDelegate  : ACTextFieldDelegate?
-    public var strictMode = false
+    open var ACDelegate  : ACTextFieldDelegate?
+    open var strictMode = false
     private var ACDelegateResult = true
     private var autoCompleteDataSet = [String]()
     private var autoCompleteCharacterCount = 0
@@ -28,7 +28,8 @@ public class ACTextField: UITextField,UITextFieldDelegate {
     public func setAutoCompleteWith(DataSet dataSet:[String]){
         autoCompleteDataSet = dataSet
     }
-    override init(frame: CGRect) {
+    
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         self.delegate = self
     }
@@ -40,7 +41,7 @@ public class ACTextField: UITextField,UITextFieldDelegate {
     }
     
     
-    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool { //1
+    open func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool { //1
         if let del = ACDelegate?.ACTextField(self, shouldChangeCharactersIn: range, replacementString: string){
             ACDelegateResult = del
         }

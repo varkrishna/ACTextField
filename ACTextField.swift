@@ -15,10 +15,10 @@ public protocol ACTextFieldDelegate {
 //        return true
 //    }
 //}
-public class ACTextField: UITextField,UITextFieldDelegate {
+open class ACTextField: UITextField,UITextFieldDelegate {
 
     public var ACDelegate  : ACTextFieldDelegate?
-    public var strictMode = false
+    open var strictMode = false
     private var ACDelegateResult = true
     private var autoCompleteDataSet = [String]()
     private var autoCompleteCharacterCount = 0
@@ -44,7 +44,7 @@ public class ACTextField: UITextField,UITextFieldDelegate {
     }
     
     
-    public func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool { //1
+    open func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool { //1
         if let del = ACDelegate?.ACTextField(self, shouldChangeCharactersIn: range, replacementString: string){
             ACDelegateResult = del
         }
